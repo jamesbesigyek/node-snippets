@@ -8,7 +8,7 @@ html(lang="en")
             div.col-md-6
                 div.card-header
                     header.card-title Register
-                form
+                form(method="post" action="/page2") 
                     div.form-row
                         div.col-form-group
                             label first name
@@ -16,3 +16,35 @@ html(lang="en")
                         div.col-form-group
                             label last name
                             input.form-control(name ="lastname")
+                    div.form-group
+                                label(for="email")
+                                input.form-control(type="email" placeholder = " " name="email")
+                                small.form-text.text-muted We'll never share your email with anyone else.
+                    ddiv.form-group
+                                label.form-check.form-check-inline
+                                    input.form-check-input(type="radio" name="gender" value="Female")
+                                    span.form-check-label Female
+
+                                label.form-check.form-check-inline
+                                    input.form-check-input(type="radio" name="gender" value="Male")
+                                    span.form-check-label Male
+                    div.form-row
+                                div.col-md-6.form-group
+                                    label City
+                                    input.form-control(type="text"name="city" value="city")
+                                
+                                div.col-md-6.form-group
+                                    label Country
+                                    select#inputState.form-control(value="country")
+                                        option Choose.......
+                                        option Uzbekistan
+                                        option Russia
+                                        option(selected) United States
+                                        option Choose.......
+                                        option India
+                                        option Afghanistan
+                    div.form-group
+                                label Create password
+                                input.form-control(type="password" value="password")
+                    div.form-group
+                                button.btn.btn-primary.btn-block(type="submit") Register
