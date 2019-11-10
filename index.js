@@ -6,7 +6,7 @@ const path = require("path");
 const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({extended: true}))
 app.set("view engine", "pug")
-app.set("views", path.join(__dirname, "views")) //setting the views path
+app.set("views", path.join(__dirname, "pugs")) //setting the views path-pugs here is the folder where rendered files are located
 
 
     
@@ -83,7 +83,9 @@ app.post("/page2", (req, res)=>{    //'page2"path for page to be loaded-also sim
        sex:req.body.gender,
        city:req.body.city,
        country:req.body.country,
-       password:req.body.password,
+       password:req.body.password, //call fields by name
+
+       
 
 
     }) //kevin is another pug file
