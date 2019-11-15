@@ -10,16 +10,6 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;  //a promise is feedback mechanism on the status of the transaction
 mongoose.connect("mongodb://localhost:27017/node-demo"); // you can use mlab- a mongoose online database
 
-// import routes
-
-const postroutes = require("./routes/routes")
-app.use("/register",postroutes)
-
-
-
-
-
-
 // install- dotenv
 //create a file .env-in it create variable and assign it to a url link of database
 const nameSchema = new mongoose.Schema({      //creating a schema
@@ -37,7 +27,23 @@ const nameSchema = new mongoose.Schema({      //creating a schema
 
  
 
+  app.get("/register", (req,res)=>{
+    res.render("register")
+})
 
+app.post("/register",(req, res)=>{
+    const newregister = new register (req.body)
+            //"register" is the collection created for the database
+            newregister.save()
+    .then(item => {                         //success promise
+        register.find().then(items => {        //
+        res.render("list",{users:items}) //"users:lists" renders list pug and passes to list items in users table
+        })
+    })
+    .catch(err => {                         //failed to save promise
+      res.status(400).send("unable to save to database");   // 400 is a status code for fail.
+    })
+})
 
 app.listen(3000,()=>{                           
     console.log("listening on port 3000")

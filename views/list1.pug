@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+       
+        title List page
+        link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")  
+    body
+        header.card-header
+            h4.card-title Registerd Users
+        table.table
+            thead.thead-dark
+                tr
+                    th firstname
+                    th lastname
+                    th email
+                    th gender
+                    th city
+                    th country
+                    
+                tbody            
+                    each user in users
+                        tr
+                            td #{user.firstname} 
+                            td #{user.lastname}
+                            td #{user.email}
+                            td #{user.gender}
+                            td #{user.city}
+                            td #{user.country}
+                            
