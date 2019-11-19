@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+       
+        title List page
+        link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")  
+    body
+        header.card-header
+            h4.card-title upload form
+        div class="container"
+    
+    form action="/uploads" method="POST"
+            div class="file-field input-field"
+              <div class="btn">
+                <span>File</span>
+                <input class="myfile" type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input name="path" class="file-path validate" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn">upload</button>
+          </form>
+</div>
