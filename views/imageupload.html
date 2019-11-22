@@ -16,6 +16,7 @@
 <body>
 <div class="container">
     <h1>File upload</h1>
+    < %= typeof msg != "undefined" ? msg : "" %>
     <!-- the action route below must match that of the post route-->
     <form action="/register/upload" method="POST" enctype="multipart/form-data"> 
       <!--body parse has challenges with multipart encription-->
@@ -30,6 +31,8 @@
             </div>
             <button type="submit" class="btn">upload</button>
           </form>
+          <!-- making image responsive with a materializecss class "img-responsive"-->
+          <img class = "responsive-img" src= "< %= typeof file != "undefined" ? msg : "" %>"  alt="">
 </div>
 
 
